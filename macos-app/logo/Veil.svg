@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="130" y1="90" x2="900" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18231F"/>
+      <stop offset="1" stop-color="#080D0B"/>
+    </linearGradient>
+    <linearGradient id="cloth" x1="250" y1="170" x2="760" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#79F0C8"/>
+      <stop offset="0.48" stop-color="#35C99B"/>
+      <stop offset="1" stop-color="#16866A"/>
+    </linearGradient>
+    <linearGradient id="fold" x1="390" y1="160" x2="610" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8FFF6" stop-opacity="0.88"/>
+      <stop offset="0.55" stop-color="#8EECCB" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#0D6E57" stop-opacity="0.62"/>
+    </linearGradient>
+    <radialGradient id="signal" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(512 500) rotate(90) scale(290)">
+      <stop stop-color="#FF7665" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#FF6253" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <circle cx="512" cy="500" r="310" fill="url(#signal)"/>
+
+  <!-- Protected network signal, partially concealed behind the veil. -->
+  <circle cx="512" cy="500" r="205" fill="none" stroke="#FF6B5C" stroke-width="20" opacity="0.92"/>
+  <path d="M372 563L512 418L662 557" fill="none" stroke="#FFF3E5" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="372" cy="563" r="31" fill="#FF6B5C" stroke="#FFF3E5" stroke-width="12"/>
+  <circle cx="512" cy="418" r="31" fill="#FF6B5C" stroke="#FFF3E5" stroke-width="12"/>
+  <circle cx="662" cy="557" r="31" fill="#FF6B5C" stroke="#FFF3E5" stroke-width="12"/>
+
+  <!-- A single flowing translucent veil with a folded center and wavy hem. -->
+  <path d="M216 205C317 151 413 130 512 130C615 130 713 153 808 205L770 642C757 752 704 814 634 842C585 861 548 839 512 800C475 843 436 864 386 843C315 814 264 752 251 642L216 205Z" fill="#35C99B" opacity="0.16" filter="url(#shadow)"/>
+  <path d="M231 191C329 150 420 132 512 132C608 132 700 151 793 191L757 632C748 727 706 785 643 817C594 842 551 817 512 768C471 819 428 844 379 818C316 785 275 727 266 632L231 191Z" fill="url(#cloth)" opacity="0.91"/>
+
+  <!-- Fabric folds preserve the signal silhouette while reading as draped cloth. -->
+  <path d="M321 165C375 151 427 140 475 136C440 302 421 471 420 641C419 728 441 770 479 803C446 835 411 835 378 818C316 785 275 727 266 632L231 191C260 179 290 170 321 165Z" fill="#B8F9E1" opacity="0.30"/>
+  <path d="M512 132C556 288 578 452 584 624C588 720 557 764 512 800C466 764 435 720 440 624C448 450 471 287 512 132Z" fill="url(#fold)" opacity="0.78"/>
+  <path d="M698 163C733 172 764 181 793 191L757 632C748 727 706 785 643 817C613 833 585 830 559 812C601 764 622 704 620 625C616 460 592 297 552 136C600 140 649 149 698 163Z" fill="#08795D" opacity="0.28"/>
+
+  <!-- Fine edge and V-shaped fold identify the mark at small icon sizes. -->
+  <path d="M231 191C329 150 420 132 512 132C608 132 700 151 793 191" fill="none" stroke="#E7FFF6" stroke-width="18" stroke-linecap="round" opacity="0.92"/>
+  <path d="M455 238C469 390 471 587 512 768C553 587 555 390 569 238" fill="none" stroke="#F2FFF9" stroke-width="15" stroke-linecap="round" opacity="0.58"/>
+</svg>
