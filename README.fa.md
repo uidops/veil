@@ -42,7 +42,7 @@
 
 ## دانلود
 
-آخرین فایل **DMG** را از [GitHub Releases](https://github.com/g3ntrix/Veil/releases) دریافت کنید.
+آخرین فایل **DMG** را از [GitHub Releases](https://github.com/uidops/veil/releases) دریافت کنید.
 
 بعد از باز کردن DMG، برنامه **Veil** را به **Applications** بکشید.
 

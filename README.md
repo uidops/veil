@@ -42,7 +42,7 @@ Import your profiles, test them, choose the best one, and connect. Veil prepares
 
 ## Download
 
-Get the latest **DMG** from [GitHub Releases](https://github.com/g3ntrix/Veil/releases).
+Get the latest **DMG** from [GitHub Releases](https://github.com/uidops/veil/releases).
 
 After opening the DMG, drag **Veil** to **Applications**.
 

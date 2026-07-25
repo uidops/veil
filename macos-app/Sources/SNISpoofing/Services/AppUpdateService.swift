@@ -40,7 +40,7 @@ enum AppUpdateError: LocalizedError {
 final class AppUpdateService {
     static let shared = AppUpdateService()
 
-    private let latestReleaseURL = URL(string: "https://api.github.com/repos/g3ntrix/Cloak/releases/latest")!
+    private let latestReleaseURL = URL(string: "https://api.github.com/repos/uidops/veil/releases/latest")!
     private let decoder: JSONDecoder
     private let activeDownloadLock = NSLock()
     private var activeDownload: AppUpdateDownloadDelegate?

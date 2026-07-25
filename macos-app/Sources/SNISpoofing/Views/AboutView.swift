@@ -175,7 +175,7 @@ struct AboutView: View {
                     .font(.system(size: 11))
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
-                Link("github.com/g3ntrix/Cloak", destination: URL(string: "https://github.com/g3ntrix/Cloak")!)
+                Link("github.com/uidops/veil", destination: URL(string: "https://github.com/uidops/veil")!)
                     .font(.system(size: 12, weight: .medium))
             }
         }
@@ -190,7 +190,6 @@ struct AboutView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Made by uidops")
                         .font(.system(size: 14, weight: .semibold))
-                    Link("t.me/sys_call", destination: URL(string: "https://t.me/sys_call")!)
                         .font(.system(size: 12, weight: .medium))
                 }
                 Spacer(minLength: 0)
