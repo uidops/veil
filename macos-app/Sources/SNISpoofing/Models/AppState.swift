@@ -111,7 +111,6 @@ final class AppState: ObservableObject {
         self.profiles = store.loadProfiles()
         self.listenerProject = store.loadListenerProjectConfig() ?? .default
         self.profilePingResults = store.loadPingResults()
-        seedBundledProfilesIfNeeded()
 
         python.onLog = { [weak self] line in
             Task { @MainActor in self?.appendLog(line, prefix: "") }
@@ -132,37 +131,6 @@ final class AppState: ObservableObject {
             try? await Task.sleep(nanoseconds: 1_500_000_000)
             await self?.checkForUpdates(silent: true)
         }
-    }
-
-    /// Adds bundled example profiles if they are not already present (by server/port/SNI).
-    /// Runs on every launch but only appends missing entries — not only on first empty install,
-    /// so users who already had other profiles still get these once.
-    private func seedBundledProfilesIfNeeded() {
-        let seeds = [
-            "trojan://humanity@127.0.0.1:40443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&host=www.ignitelimit.com#Amirstar",
-            "trojan://humanity@127.0.0.1:40443?security=tls&sni=www.creationlong.org&allowInsecure=1&type=ws&path=/assignment&host=www.creationlong.org#cloud"
-        ]
-        var appended: [Profile] = []
-        for raw in seeds {
-            guard let parsed = try? ProfileImporter.importFrom(raw) else { continue }
-            let dup = profiles.contains { existing in
-                existing.kind == parsed.kind
-                    && existing.server == parsed.server
-                    && existing.serverPort == parsed.serverPort
-                    && existing.tls.serverName == parsed.tls.serverName
-            }
-            if !dup {
-                appended.append(parsed)
-            }
-        }
-        guard !appended.isEmpty else { return }
-        profiles.append(contentsOf: appended)
-        if settings.activeProfileID == nil {
-            settings.activeProfileID = profiles.first?.id
-            saveSettings()
-        }
-        saveProfiles()
-        refreshFailoverAfterProfileChange()
     }
 
     private func appendLog(_ line: LogLine, prefix: String) {
