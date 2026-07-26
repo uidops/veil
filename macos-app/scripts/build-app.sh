@@ -16,7 +16,7 @@ APP_NAME="Veil"
 BUNDLE_ID="${BUNDLE_ID:-io.github.snispoofinggui.cloak}"
 DIST="$ROOT/dist"
 BUILD_VARIANT="${BUILD_VARIANT:-universal}"
-VERSION="${VERSION:-1.1.0}"
+VERSION="${VERSION:-1.1.1}"
 VENDOR_XRAY="$ROOT/bundle/xray"
 VENDOR_TUN2SOCKS="$ROOT/bundle/tun2socks"
 

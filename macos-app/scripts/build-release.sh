@@ -7,16 +7,16 @@
 #   3. Package Veil-<version>.dmg.
 #
 # Usage from macos-app/scripts:
-#   VERSION=1.1.0 ./build-release.sh
+#   VERSION=1.1.1 ./build-release.sh
 #
 # Usage from repo root:
-#   VERSION=1.1.0 ./macos-app/scripts/build-release.sh
+#   VERSION=1.1.1 ./macos-app/scripts/build-release.sh
 set -euo pipefail
 
 SCRIPTS_DIR="$(cd "$(dirname "$0")" && pwd)"
 APP_DIR="$(cd "$SCRIPTS_DIR/.." && pwd)"
 REPO_ROOT="$(cd "$APP_DIR/.." && pwd)"
-VERSION="${VERSION:-1.1.0}"
+VERSION="${VERSION:-1.1.1}"
 
 echo "Repo:             $REPO_ROOT"
 echo "macOS app:        $APP_DIR"
