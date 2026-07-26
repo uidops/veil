@@ -205,6 +205,11 @@ struct ProfilesView: View {
                     .toggleStyle(.switch)
                     .controlSize(.small)
 
+                Toggle("Auto best profile", isOn: autoFailoverBinding)
+                    .font(.system(size: 10.5, weight: .medium))
+                    .toggleStyle(.switch)
+                    .controlSize(.small)
+
                 if profilesWithoutSuccessfulPingCount > 0, !app.isPingBatchRunning {
                     Button("Remove no ping (\(profilesWithoutSuccessfulPingCount))", role: .destructive) {
                         showRemoveUnpingedConfirm = true
@@ -582,6 +587,13 @@ struct ProfilesView: View {
     }
 
     @MainActor
+    private var autoFailoverBinding: Binding<Bool> {
+        Binding(
+            get: { app.settings.autoFailoverEnabled },
+            set: { app.settings.autoFailoverEnabled = $0 }
+        )
+    }
+
     private func exportProfiles(_ profiles: [Profile]) {
         guard !profiles.isEmpty else { return }
 
